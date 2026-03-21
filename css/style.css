@@ -1,0 +1,135 @@
+body{
+  font-family: 'Segoe UI', sans-serif;
+  background: #fff8f0;
+}
+
+/* Navbar */
+.navbar{
+  background: #ba0a0a;
+}
+
+
+.navbar-brand{
+  color: white !important;
+  font-weight: bold;
+  font-size: 24px;
+}
+
+/* Banner */
+.banner{
+  background: url('../images/banner.jpg') center/cover;
+  height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 40px;
+  font-weight: bold;
+}
+
+/* Cards */
+.card{
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transition: 0.3s;
+}
+
+.card:hover{
+  transform: translateY(-5px);
+}
+
+.card img{
+  height: 180px;
+  object-fit: cover;
+  border-radius: 15px 15px 0 0;
+}
+
+.price{
+  color: #e63946;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+/* Buttons */
+.btn-custom{
+  background: #ff6b6b;
+  color: white;
+  border-radius: 30px;
+  padding: 8px 20px;
+}
+
+.btn-custom:hover{
+  background: #e63946;
+  color: white;
+}
+
+/* Forms */
+.form-box{
+  background: white;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+/* Cart Table */
+.table{
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+}
+/* ROW CONTAINER */
+
+.shop-title-row{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  padding: 20px;
+  flex-wrap: wrap;
+  background: linear-gradient(90deg,#fff5e6,#ffe0b3);
+  border-bottom: 2px solid #f5c27a;
+}
+
+
+/* SHOP NAME */
+
+.shop-name{
+  font-size: 34px;
+  font-weight: bold;
+  color: #8B0000;
+  font-family: 'Segoe UI', sans-serif;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  margin: 0;
+  font-family: 'Playfair Display', serif;
+  text-shadow:
+    2px 2px 4px rgba(0,0,0,0.25),
+    0 0 8px rgba(255, 98, 0, 0.6);
+    font-family: cursive;
+}
+
+
+
+/* SWEET ICONS */
+
+.sweet-icon{
+  width: 70px;
+  height: 100px;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+/* HOVER EFFECT */
+
+.sweet-icon:hover{
+  transform: scale(1.15) rotate(5deg);
+}
+
+
+/* MILK GLASS LITTLE BIGGER */
+
+.milk{
+  width: 60px;
+  height: 60px;
+}
+
