@@ -13,7 +13,7 @@ body{
     align-items:center;
     flex-direction:column;
     font-family:Segoe UI, sans-serif;
-    background: linear-gradient(135deg,#1a73e8,#1de9b6);
+    background: linear-gradient(135deg,#c83f3f,#c4993e);
 }
 
 
