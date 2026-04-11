@@ -31,7 +31,7 @@ id="qty"
 value="1"
 min="1"
 class="form-control w-25"
-onkeyup="calc()">
+oninput="calc()">
 
 <br>
 
@@ -63,6 +63,7 @@ function calc(){
  document.getElementById("total").innerText = total;
  document.getElementById("total_input").value = total;
 }
+window.onload = calc;
 </script>
 
 <?php include "includes/footer.php"; ?>

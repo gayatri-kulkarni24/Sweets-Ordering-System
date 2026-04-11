@@ -1,4 +1,4 @@
-<!-- success.php -->
+<!-- / success.php -->
 <?php include "includes/header.php"; ?>
 <style>
 .success-container{
@@ -78,81 +78,95 @@
 
 <?php include "includes/footer.php"; ?>
 
+
+
+
+
+
+
 <?php
-session_start();
+
 include "db.php";
 
-/* CUSTOMER INSERT */
+$customer_id = $_SESSION['cid'];
 
-$name    = $_POST['name'];
-$mobile  = $_POST['mobile'];
-$address = $_POST['address'];
+$address = mysqli_real_escape_string($conn, $_POST['address']);
 $total   = $_POST['total'];
+$payment = $_POST['payment'];
 
-mysqli_query($conn,
-"INSERT INTO customers
-(name,phone,address)
-VALUES
-('$name','$mobile','$address')");
+$sweet_name = $_POST['sweet_name'];
+$qty        = $_POST['qty'];
 
-$customer_id = mysqli_insert_id($conn);
+/* VALIDATION */
+if(empty($address) || empty($total) || empty($payment)){
+  die("Missing required data");
+}
 
-/* ORDER INSERT */
+/* UPDATE ADDRESS */
+if(!mysqli_query($conn,
+"UPDATE customers
+ SET address='$address'
+ WHERE customer_id=$customer_id")){
+  die("Address Update Error: " . mysqli_error($conn));
+}
 
-mysqli_query($conn,
+/* INSERT ORDER */
+if(!mysqli_query($conn,
 "INSERT INTO orders
-(customer_id,total_amount)
+(customer_id, address, total_amount, payment_method, status)
 VALUES
-($customer_id,$total)");
+($customer_id, '$address', $total, '$payment', 'Pending')")){
+  die("Order Insert Error: " . mysqli_error($conn));
+}
 
 $order_id = mysqli_insert_id($conn);
+$q = mysqli_query($conn,
+"SELECT sweet_id, price FROM sweets
+ WHERE sweet_name='$sweet_name'");
 
-/* CHECK FLOW */
+if(!$q){
+  die("Query Error: " . mysqli_error($conn));
+}
 
-if(isset($_POST['cart_checkout']) &&
-   $_POST['cart_checkout']==1){
+$row = mysqli_fetch_assoc($q);
 
-  /* CART ITEMS INSERT */
+if(!$row){
+  die("Sweet not found. Check sweet_name.");
+}
 
-  foreach($_SESSION['cart'] as $id=>$qty){
+$sweet_id = $row['sweet_id'];
+$price    = $row['price'];
 
-    $q=mysqli_query($conn,
-    "SELECT price FROM sweets
-     WHERE sweet_id=$id");
+$subtotal = $price * $qty;
 
-    $row=mysqli_fetch_assoc($q);
-    $price=$row['price'];
-
-    mysqli_query($conn,
-    "INSERT INTO order_items
-    (order_id,product_id,
-     quantity,price)
-     VALUES
-    ($order_id,$id,$qty,$price)");
-  }
-
-  unset($_SESSION['cart']);
-
-}else{
-
-  /* BUY NOW SINGLE ITEM */
-
-  $sweet_name = $_POST['sweet_name'];
-  $qty        = $_POST['qty'];
-  $price      = $total/$qty;
-
-  $q=mysqli_query($conn,
-  "SELECT sweet_id FROM sweets
-   WHERE sweet_name='$sweet_name'");
-
-  $row=mysqli_fetch_assoc($q);
-  $pid=$row['sweet_id'];
-
-  mysqli_query($conn,
-  "INSERT INTO order_items
-  (order_id,product_id,
-   quantity,price)
-   VALUES
-  ($order_id,$pid,$qty,$price)");
+if(!mysqli_query($conn,
+"INSERT INTO order_items
+(order_id, sweet_id, quantity, subtotal)
+VALUES
+($order_id, $sweet_id, $qty, $subtotal)")){
+  die("Insert Error: " . mysqli_error($conn));
 }
 ?>
+
+<?php include "includes/header.php"; ?>
+
+<div class="container mt-5 text-center">
+
+<div class="card p-4 shadow">
+
+<h2>🎉 Order Placed Successfully!</h2>
+
+<p><b>Order ID:</b> <?php echo $order_id; ?></p>
+<p><b>Total Amount:</b> ₹<?php echo $total; ?></p>
+<p><b>Payment Method:</b> <?php echo $payment; ?></p>
+<p><b>Status:</b> Pending</p>
+
+<a href="menu.php" class="btn btn-success mt-3">
+Order More Sweets
+</a>
+
+</div>
+
+</div>
+
+<?php include "includes/footer.php"; ?>
