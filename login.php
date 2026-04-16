@@ -13,24 +13,19 @@ body{
     align-items:center;
     flex-direction:column;
     font-family:Segoe UI, sans-serif;
-    background: linear-gradient(135deg,#c83f3f,#c4993e);
+    background: linear-gradient(135deg,#6699CC,#152238);
 }
 
-
-/* same width for heading and form */
 h1, form{
     width:500px;
 }
 
-
-/* heading */
 h1{
     text-align:center;
     color:#1a73e8;
     margin-bottom:20px;
 }
 
-/* form box */
 form{
     background:#eeeeee;
     padding:25px;
@@ -40,9 +35,6 @@ form{
     font-size:16px;
     color:#333;
 }
-
-
-/* inputs */
 
 input[type="email"],
 input[type="password"]{
@@ -56,49 +48,31 @@ input[type="password"]{
     font-size:15px;
 }
 
-
 input:focus{
     outline:none;
     border-bottom:2px solid #1a73e8;
 }
 
-
-/* button */
-
 input[type="submit"]{
     width:100%;
     padding:12px;
-
     border:none;
-
-    background: linear-gradient(90deg,#1a73e8,#1de9b6);
-
+    background: linear-gradient(90deg,#660000,#C51E3A);
     color:white;
-
     font-size:20px;
     font-weight:bold;
-
     cursor:pointer;
 }
 
-
-/* hover */
-
 input[type="submit"]:hover{
-
     opacity:0.9;
-
 }
-
-
-/* text */
 
 p{
     text-align:center;
     margin-top:15px;
     font-size: 18px;
 }
-
 
 a{
     color:#1a73e8;
@@ -113,17 +87,14 @@ a{
 
 Email:
 <input type="email" name="email" required><br><br>
-
 Password:
 <input type="password" name="password" required><br><br>
 
 <input type="submit" name="login" value="Login">
-
 <p>
 New user?
 <a href="register.php">Register here</a>
 </p>
-
 </form>
 
 <?php

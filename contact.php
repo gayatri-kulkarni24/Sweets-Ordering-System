@@ -76,7 +76,6 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
     10 AM – 10 PM (Daily)
   </div>
 
-  <!-- Instagram -->
   <div class="social-icons">
     <a href="https://instagram.com/dhananjay_milk_centre"
        target="_blank">
@@ -84,7 +83,6 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
     </a>
   </div>
 
-  <!-- Optional Map -->
   <div class="map">
     <iframe
       src="https://www.google.com/maps?q=Belapur Bk.,Maharashtra&output=embed"

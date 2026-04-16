@@ -1,4 +1,6 @@
 <!-- buy.php -->
+
+<!-- not working -->
 <?php
 include "db.php";
 

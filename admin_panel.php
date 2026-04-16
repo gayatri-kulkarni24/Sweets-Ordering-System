@@ -20,13 +20,12 @@ body{
     color:white;
     text-align:center;
 }
-/* heading */
+
 h2{
     margin-top:30px;
     color:#00c6ff;
 }
 
-/* table */
 table{
 
     margin:auto;
@@ -37,15 +36,12 @@ table{
     box-shadow:0 8px 20px rgba(0,0,0,0.5);
 }
 
-/* header */
-
 th{
     background:#111;
     color:#00c6ff;
     padding:12px;
     border:1px solid #333;
 }
-/* rows */
 
 td{
     padding:10px;
@@ -54,13 +50,10 @@ td{
     text-align:center;
 }
 
-/* hover row */
-
 tr:hover{
     background:#2a2a2a;
 }
 
-/* links */
 
 a{
     color:#00c6ff;
@@ -71,9 +64,6 @@ a{
 a:hover{
     color:#66e0ff;
 }
-
-
-/* logout button */
 
 a[href="admin_logout.php"]{
     display:inline-block;
@@ -93,9 +83,7 @@ a[href="admin_logout.php"]:hover{
 </head>
 
 <h2>All Orders</h2>
-
 <table border="1">
-
 <tr>
 <th>ID</th>
 <th>Customer</th>
@@ -109,9 +97,7 @@ a[href="admin_logout.php"]:hover{
 while($row=mysqli_fetch_assoc($result))
 {
 ?>
-
 <tr>
-
 <td><?php echo $row['order_id']; ?></td>
 <td><?php echo $row['customer_id']; ?></td>
 <td><?php echo $row['total_amount']; ?></td>

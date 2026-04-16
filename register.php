@@ -19,8 +19,7 @@ body{
     align-items:center;
     font-family:Segoe UI, sans-serif;
 
-    background: linear-gradient(135deg,#1a73e8,#1de9b6);
-}
+    background: linear-gradient(135deg,#6699CC,#152238)}
 
 /* title */
 h1{
@@ -38,7 +37,6 @@ form{
     box-shadow:0 8px 20px rgba(0,0,0,0.3);
 }
 
-/* label text */
 form{
     color:#333;
     font-size:16px;
@@ -52,7 +50,7 @@ input[type="password"]{
     display:block;
     width:100%;
     border:none;
-    border-bottom:2px solid #1de9b6;
+    border-bottom:2px solid #1d2be9;
     background:transparent;
     padding:4px;
     margin-bottom:3px;
@@ -69,7 +67,7 @@ input:focus{
 input[type="submit"]{
     width:100%;
     padding:12px;
-    background: linear-gradient(90deg,#1a73e8,#1de9b6);
+    background: linear-gradient(90deg,#660000,#C51E3A);
     border:none;
     color:white;
     font-size:20px;

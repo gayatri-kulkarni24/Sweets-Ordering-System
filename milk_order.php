@@ -76,7 +76,6 @@ Full Glass ₹40 | Half Glass ₹20
 
   <input type="hidden" name="sweet_name" value="Masala Milk">
 
-  <!-- Size Selection -->
   Size:<br>
 
   <select name="size" id="size" onchange="updatePrice()">
@@ -93,7 +92,6 @@ Full Glass ₹40 | Half Glass ₹20
 
   <br>
 
-  <!-- Total Display -->
   <h3>Total: ₹ <span id="total">40</span></h3>
 
   <input type="hidden" name="total" id="total_input" value="40">

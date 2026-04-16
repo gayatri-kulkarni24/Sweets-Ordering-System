@@ -67,6 +67,7 @@
 
 
 <?php
+
 include "db.php";
 
 $customer_id = $_SESSION['cid'];
@@ -75,8 +76,9 @@ $address = mysqli_real_escape_string($conn, $_POST['address']);
 $total   = $_POST['total'];
 $payment = $_POST['payment'];
 
-$sweet_name = $_POST['sweet_name'];
-$qty        = $_POST['qty'];
+// $sweet_name = $_POST['sweet_name'];
+// $qty        = $_POST['qty'];
+// 
 
 /* VALIDATION */
 if(empty($address) || empty($total) || empty($payment)){
@@ -101,32 +103,33 @@ VALUES
 }
 
 $order_id = mysqli_insert_id($conn);
-$q = mysqli_query($conn,
-"SELECT sweet_id, price FROM sweets
- WHERE sweet_name='$sweet_name'");
 
-if(!$q){
-  die("Query Error: " . mysqli_error($conn));
-}
+// $q = mysqli_query($conn,
+// "SELECT sweet_id, price FROM sweets
+//  WHERE sweet_name='$sweet_name'");
 
-$row = mysqli_fetch_assoc($q);
+// if(!$q){
+//   die("Query Error: " . mysqli_error($conn));
+// }
 
-if(!$row){
-  die("Sweet not found. Check sweet_name.");
-}
+// $row = mysqli_fetch_assoc($q);
 
-$sweet_id = $row['sweet_id'];
-$price    = $row['price'];
+// if(!$row){
+//   die("Sweet not found. Check sweet_name.");
+// }
 
-$subtotal = $price * $qty;
+// $sweet_id = $row['sweet_id'];
+// $price    = $row['price'];
 
-if(!mysqli_query($conn,
-"INSERT INTO order_items
-(order_id, sweet_id, quantity, subtotal)
-VALUES
-($order_id, $sweet_id, $qty, $subtotal)")){
-  die("Insert Error: " . mysqli_error($conn));
-}
+// $subtotal = $price * $qty;
+
+// if(!mysqli_query($conn,
+// "INSERT INTO order_items
+// (order_id, sweet_id, quantity, subtotal)
+// VALUES
+// ($order_id, $sweet_id, $qty, $subtotal)")){
+//   die("Insert Error: " . mysqli_error($conn));
+// }
 ?>
 
 

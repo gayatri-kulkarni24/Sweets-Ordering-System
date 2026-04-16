@@ -1,6 +1,5 @@
 <?php
 include "includes/header.php";
-// session_start();
 include "db.php";
 
 if(!isset($_SESSION['cart']) || empty($_SESSION['cart'])){
@@ -11,7 +10,7 @@ if(!isset($_SESSION['cart']) || empty($_SESSION['cart'])){
 }
 ?>
 <div class="container mt-5 h-50">
-
+  
 <h2>Your Cart</h2>
 
 <table class="table table-bordered">

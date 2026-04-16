@@ -1,18 +1,19 @@
-
-<?php 
-
-// session_start();
+<?php
 include "includes/header.php"; 
 include "db.php";
 
 $customer_id = $_SESSION['cid'];
 
 $total = $_POST['total'];
-$sweet_name = $_POST['sweet_name'];
-$qty = $_POST['qty'];
 
+if(isset($_POST['cart_checkout'])){
+    $mode = "cart";
+} else {
+    $mode = "single";
+    $sweet_name = $_POST['sweet_name'];
+    $qty        = $_POST['qty'];
+}
 
-// fetch existing address
 $q = mysqli_query($conn,
 "SELECT address FROM customers
  WHERE customer_id=$customer_id");
@@ -29,10 +30,14 @@ $address = $row['address'];
 
 <form action="success.php" method="POST">
 
-<!-- Hidden Data -->
-<input type="hidden" name="total" value="<?php echo $total; ?>">
-<input type="hidden" name="sweet_name" value="<?php echo $sweet_name; ?>">
-<input type="hidden" name="qty" value="<?php echo $qty; ?>">
+ <input type="hidden" name="total" value="<?php echo $total; ?>">
+
+<?php if($mode == "cart"){ ?>
+    <input type="hidden" name="cart_checkout" value="1">
+<?php } else { ?>
+    <input type="hidden" name="sweet_name" value="<?php echo $sweet_name; ?>">
+    <input type="hidden" name="qty" value="<?php echo $qty; ?>">
+<?php } ?>
 
 <div class="mb-3">
 <label>Address</label>

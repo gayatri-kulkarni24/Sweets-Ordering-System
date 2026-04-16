@@ -5,17 +5,13 @@
 <h2 class="text-center" style="font-family:Arial; font-weight:bold;">Our Sweets</h2>
 
 <div class="row">
-
 <?php
 $q = mysqli_query($conn,"SELECT * FROM sweets");
-
 while($row=mysqli_fetch_assoc($q)){
 ?>
 
 <div class="col-md-3">
-
 <div class="card m-3 p-3 text-center">
-
 <img src="images/<?php echo $row['image']; ?>"
      height="150">
 
