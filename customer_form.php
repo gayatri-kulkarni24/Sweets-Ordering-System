@@ -1,13 +1,16 @@
 
 <?php 
+
 // session_start();
 include "includes/header.php"; 
 include "db.php";
 
 $customer_id = $_SESSION['cid'];
+
 $total = $_POST['total'];
 $sweet_name = $_POST['sweet_name'];
 $qty = $_POST['qty'];
+
 
 // fetch existing address
 $q = mysqli_query($conn,
@@ -44,6 +47,7 @@ $address = $row['address'];
 <option>Cash on Delivery</option>
 <option>UPI</option>
 <option>Credit Card</option>
+<option>Debit Card</option>
 </select>
 </div>
 

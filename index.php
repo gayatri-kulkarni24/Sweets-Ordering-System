@@ -34,9 +34,6 @@
 }
 </style>
 
-<!-- <div class="banner">
-  Fresh Sweets Delivered 🍬<br>
-</div> -->
 <div class="container mt-5">
 <div class="container-box text-center">
 <div class="shop-title-row">

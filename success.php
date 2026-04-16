@@ -19,10 +19,22 @@
   margin-top:40px;
 }
 
-.success-icon{
-  font-size:70px;
-  color:#28a745;
-  margin-bottom:20px;
+
+.success-icon {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  border: 4px solid #28a745;
+  background-color: white;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-size: 50px;
+  color: #28a745;
+
+  margin: 0 auto 20px auto; /* THIS is the magic */
 }
 
 .success-card h2{
@@ -54,38 +66,7 @@
 </style>
 
 
-<div class="success-container">
-
-  <div class="success-card">
-
-    <!-- Success Icon -->
-    <div class="success-icon">✔</div>
-
-    <h2>🎉Order Placed Successfully!🎉</h2>
-
-    <p>
-      Thank you for ordering from <b>Dhananjay's Sweets</b> 🍬<br>
-      Your sweets will be prepared fresh.
-    </p>
-
-    <a href="menu.php" class="btn-order">
-      Order More Sweets
-    </a>
-
-  </div>
-
-</div>
-
-<?php include "includes/footer.php"; ?>
-
-
-
-
-
-
-
 <?php
-
 include "db.php";
 
 $customer_id = $_SESSION['cid'];
@@ -148,25 +129,35 @@ VALUES
 }
 ?>
 
-<?php include "includes/header.php"; ?>
 
-<div class="container mt-5 text-center">
 
-<div class="card p-4 shadow">
 
-<h2>🎉 Order Placed Successfully!</h2>
+<div class="success-container">
 
-<p><b>Order ID:</b> <?php echo $order_id; ?></p>
-<p><b>Total Amount:</b> ₹<?php echo $total; ?></p>
-<p><b>Payment Method:</b> <?php echo $payment; ?></p>
-<p><b>Status:</b> Pending</p>
+  <div class="success-card">
 
-<a href="menu.php" class="btn btn-success mt-3">
-Order More Sweets
-</a>
+    <!-- Success Icon -->
+    <div class="success-icon">✔
+    </div>
 
-</div>
+    <h2>🎉Order Placed Successfully!🎉</h2>
+
+    <p>
+      Thanks for ordering from <b>Dhananjay's Sweets</b> 🍬<br>
+  We’re preparing your sweets with care and freshness.
+
+    </p>
+    <h6>Kindly keep <b>₹<?php echo $total; ?></b> ready for payment upon delivery.</h6>
+    <a href="menu.php" class="btn-order">
+      Browse More Sweets
+    </a>
+
+  </div>
 
 </div>
 
 <?php include "includes/footer.php"; ?>
+
+
+
+
