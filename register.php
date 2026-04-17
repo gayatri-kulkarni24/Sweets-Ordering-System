@@ -18,17 +18,15 @@ body{
     justify-content:center;
     align-items:center;
     font-family:Segoe UI, sans-serif;
+    background: linear-gradient(135deg,#6699CC,#152238)
+}
 
-    background: linear-gradient(135deg,#6699CC,#152238)}
-
-/* title */
 h1{
     text-align:center;
     color:#1a73e8;
     margin-bottom:20px;
 }
 
-/* form box */
 form{
     width:600px;
     background:#f2f2f2;
@@ -42,7 +40,6 @@ form{
     font-size:16px;
 }
 
-/* inputs */
 input[type="text"],
 input[type="email"],
 input[type="password"]{
@@ -57,13 +54,11 @@ input[type="password"]{
     font-size:15px;
 }
 
-/* focus line */
 input:focus{
     outline:none;
     border-bottom:2px solid #1a73e8;
 }
 
-/* button */
 input[type="submit"]{
     width:100%;
     padding:12px;
@@ -75,12 +70,10 @@ input[type="submit"]{
     cursor:pointer;
 }
 
-/* button hover */
 input[type="submit"]:hover{
     opacity:0.9;
 }
 
-/* link text */
 p{
     text-align:center;
     margin-top:15px;

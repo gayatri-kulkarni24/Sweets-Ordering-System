@@ -4,7 +4,6 @@ include "db.php";
 
 $id = intval($_POST['sweet_id']);
 
-/* INIT CART */
 if(!isset($_SESSION['cart'])){
     $_SESSION['cart'] = [];
 }
